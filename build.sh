@@ -1,1 +1,1 @@
-docker build -t dtl/performance-test .
+docker build -t performance-test .
