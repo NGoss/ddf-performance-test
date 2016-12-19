@@ -1,0 +1,15 @@
+version: '2'
+services:
+    performance-test:
+        image: dtl/performance-test
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+          - ./results:/home/perftest/output
+        environment:
+          - TEST_TYPE=${TEST_TYPE}
+          - NUM_RUNS=${NUM_RUNS}
+          - TEST_NAME=${TEST_NAME}
+networks:
+  default:
+    external:
+      name: testbed
